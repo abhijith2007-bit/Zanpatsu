@@ -1,0 +1,277 @@
+body {
+    position: relative;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+div.main {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+}
+
+header {
+    background: #17324d;
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 4px solid #f08a72;
+    box-shadow: 0 2px 8px rgba(23, 50, 77, 0.25);
+}
+
+nav {
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.logout-button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+    border-color: #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(calc(-50% - 5px));
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+nav ul li:hover {
+    transform: translateY(-5px);
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav ul li a .material-icons {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+nav ul li a:hover {
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+nav ul li .dropdown li {
+    display: block;
+    margin: 0;
+}
+
+nav ul li .dropdown li a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #17324d;
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+nav ul li .dropdown li a .material-icons {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+nav ul li .dropdown li a:hover {
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background: #f4f4f4;
+}
+
+.registration-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, .20);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, .30);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    height: 450px;
+}
+
+.registration-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+}
+
+.registration-form h2 .material-icons {
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: #333;
+}
+
+.registration-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.registration-form .input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.registration-form .input-container .material-icons {
+    position: absolute;
+    left: 10px;
+    font-size: 20px;
+    color: #999;
+}
+
+.registration-form input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.registration-form input:hover {
+    border-color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.registration-form button {
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    color: #333;
+    border: 2px solid #333;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.registration-form button:hover {
+    background: #333;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+.registration-form button .material-icons {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+#errorMessages {
+    color: red;
+    margin-top: 10px;
+    display: none;
+}
+
+.login-now {
+    text-align: center;
+}
+
+.login-now a {
+    color: #1208a8;
+}
+
+footer {
+    background: #f08a72;
+    color: #17324d;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    nav ul {
+        flex-wrap: wrap;
+        gap: 6px 10px;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .registration-form {
+        width: min(90%, 420px);
+        margin: 30px auto;
+        padding: 18px 16px;
+        height: auto;
+    }
+
+    .registration-form h2 {
+        font-size: 20px;
+    }
+
+    .registration-form h2 .material-icons {
+        left: 12px;
+        top: 50%;
+    }
+}

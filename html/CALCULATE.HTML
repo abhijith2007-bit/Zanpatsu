@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CGPA Calculator</title>
+    <link rel="stylesheet" href="../css/calculate.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="main">
+                <ul>CGPA Calculator</ul>
+            </div>
+
+            <ul>
+                <li><a href="home.html"><span class="material-icons">home</span> Home</a></li>
+                <li>
+                    <a href="#"><span class="material-icons">people</span> Students</a>
+                    <ul class="dropdown">
+                        <li><a href="login.html"><span class="material-icons">login</span> Student Login</a></li>
+                        <li><a href="registration.html"><span class="material-icons">person_add</span> Student
+                                Registration</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="CALCULATE.HTML"><span class="material-icons">library_books</span> CALCULATE</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="profile-menu">
+            <button id="profileButton" class="profile-button" type="button" aria-expanded="false" aria-controls="profilePanel" title="Open profile">
+                <span class="material-icons">account_circle</span>
+                <span class="profile-label">Profile</span>
+            </button>
+            <section id="profilePanel" class="profile-panel" hidden>
+                <h2>Student Profile</h2>
+                <div id="profileDetails" class="profile-details"></div>
+                <div id="profileHistory" class="profile-history"></div>
+                <button id="profileLogoutButton" class="profile-logout-button" type="button">
+                    <span class="material-icons">logout</span> Logout
+                </button>
+            </section>
+        </div>
+    </header>
+    <div id="container">
+        <h1>CGPA Calculator</h1>
+        <button type="button" id="semesterChooser" class="semester-button">Select Semester</button>
+        <div id="semesterModal" class="semester-modal" role="dialog" aria-modal="true" aria-labelledby="semesterTitle">
+            <div class="semester-modal-content">
+                <h2 id="semesterTitle">Choose your semester</h2>
+                <p>Select a semester to load its courses and credits.</p>
+                <div id="semesterOptions" class="semester-options"></div>
+            </div>
+        </div>
+        <div id="calculator">
+
+            <form>
+                <p class="lead mb-3 mt-3">Enter Your Course Grade</p>
+                        <div class="row mr-2 ml-2 mb-2">
+                            <div class="col-md-4">
+                                <div class="inputwrapper city-input-wrapper">
+                                    <input class="form-control" type="text" value="Course 1" readonly />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="inputwrapper state-input-wrapper">
+                                    <select id="cg1" class="form-control">
+                                        <option disabled selected value="0">--Course Grade --</option>
+                                        <option value="10">O</option>
+                                        <option value="9">A+</option>
+                                        <option value="8">A</option>
+                                        <option value="7">B+</option>
+                                        <option value="6.5">B</option>
+                                        <option value="6">C+</option>
+                                        <option value="5">C</option>
+                                        <option value="4">D</option>
+                                        <option value="U">U</option>
+                                        <option value="UA">UA</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mr-2 ml-2 mb-2">
+                            <div class="col-md-4">
+                                <div class="inputwrapper city-input-wrapper">
+                                    <input class="form-control" type="text" value="Course 2" readonly />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="inputwrapper state-input-wrapper">
+                                    <select id="cg2" class="form-control">
+                                        <option disabled selected value="0">--Course Grade --</option>
+                                        <option value="10">O</option>
+                                        <option value="9">A+</option>
+                                        <option value="8">A</option>
+                                        <option value="7">B+</option>
+                                        <option value="6.5">B</option>
+                                        <option value="6">C+</option>
+                                        <option value="5">C</option>
+                                        <option value="4">D</option>
+                                        <option value="U">U</option>
+                                        <option value="UA">UA</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mr-2 ml-2 mb-2">
+                            <div class="col-md-4">
+                                <div class="inputwrapper city-input-wrapper">
+                                    <input class="form-control" type="text" value="Course 3" readonly />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="inputwrapper state-input-wrapper">
+                                    <select id="cg3" class="form-control">
+                                        <option disabled selected value="0">--Course Grade --</option>
+                                        <option value="10">O</option>
+                                        <option value="9">A+</option>
+                                        <option value="8">A</option>
+                                        <option value="7">B+</option>
+                                        <option value="6.5">B</option>
+                                        <option value="6">C+</option>
+                                        <option value="5">C</option>
+                                        <option value="4">D</option>
+                                        <option value="U">U</option>
+                                        <option value="UA">UA</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mr-2 ml-2 mb-2">
+                            <div class="col-md-4">
+                                <div class="inputwrapper city-input-wrapper">
+                                    <input class="form-control" type="text" value="Course 4" readonly />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="inputwrapper state-input-wrapper">
+                                    <select id="cg4" class="form-control">
+                                        <option disabled selected value="0">--Course Grade --</option>
+                                        <option value="10">O</option>
+                                        <option value="9">A+</option>
+                                        <option value="8">A</option>
+                                        <option value="7">B+</option>
+                                        <option value="6.5">B</option>
+                                        <option value="6">C+</option>
+                                        <option value="5">C</option>
+                                        <option value="4">D</option>
+                                        <option value="U">U</option>
+                                        <option value="UA">UA</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mr-2 ml-2 mb-2">
+                            <div class="col-md-4">
+                                <div class="inputwrapper city-input-wrapper">
+                                    <input class="form-control" type="text" value="Course 5" readonly />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="inputwrapper state-input-wrapper">
+                                    <select id="cg5" class="form-control">
+                                        <option disabled selected value="0">--Course Grade --</option>
+                                        <option value="10">O</option>
+                                        <option value="9">A+</option>
+                                        <option value="8">A</option>
+                                        <option value="7">B+</option>
+                                        <option value="6.5">B</option>
+                                        <option value="6">C+</option>
+                                        <option value="5">C</option>
+                                        <option value="4">D</option>
+                                        <option value="U">U</option>
+                                        <option value="UA">UA</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mr-2 ml-2 mb-2">
+                            <div class="col-md-4">
+                                <div class="inputwrapper city-input-wrapper">
+                                    <input class="form-control" type="text" value="Course 6" readonly />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="inputwrapper state-input-wrapper">
+                                    <select id="cg6" class="form-control">
+                                        <option disabled selected value="0">--Course Grade --</option>
+                                        <option value="10">O</option>
+                                        <option value="9">A+</option>
+                                        <option value="8">A</option>
+                                        <option value="7">B+</option>
+                                        <option value="6.5">B</option>
+                                        <option value="6">C+</option>
+                                        <option value="5">C</option>
+                                        <option value="4">D</option>
+                                        <option value="U">U</option>
+                                        <option value="UA">UA</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mr-2 ml-2 mb-2">
+                            <div class="col-md-4">
+                                <div class="inputwrapper city-input-wrapper">
+                                    <input class="form-control" type="text" value="Course 7" readonly />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="inputwrapper state-input-wrapper">
+                                    <select id="cg7" class="form-control">
+                                        <option disabled selected value="0">--Course Grade --</option>
+                                        <option value="10">O</option>
+                                        <option value="9">A+</option>
+                                        <option value="8">A</option>
+                                        <option value="7">B+</option>
+                                        <option value="6.5">B</option>
+                                        <option value="6">C+</option>
+                                        <option value="5">C</option>
+                                        <option value="4">D</option>
+                                        <option value="U">U</option>
+                                        <option value="UA">UA</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mr-2 ml-2 mb-2">
+                            <div class="col-md-4">
+                                <div class="inputwrapper city-input-wrapper">
+                                    <input class="form-control" type="text" value="Course 8" readonly />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="inputwrapper state-input-wrapper">
+                                    <select id="cg8" class="form-control">
+                                        <option disabled selected value="0">--Course Grade --</option>
+                                        <option value="10">O</option>
+                                        <option value="9">A+</option>
+                                        <option value="8">A</option>
+                                        <option value="7">B+</option>
+                                        <option value="6.5">B</option>
+                                        <option value="6">C+</option>
+                                        <option value="5">C</option>
+                                        <option value="4">D</option>
+                                        <option value="U">U</option>
+                                        <option value="UA">UA</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mr-2 ml-2 mb-2">
+                            <div class="col-md-4">
+                                <div class="inputwrapper city-input-wrapper">
+                                    <input class="form-control" type="text" value="Course 9" readonly />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="inputwrapper state-input-wrapper">
+                                    <select id="cg9" class="form-control">
+                                        <option disabled selected value="0">--Course Grade --</option>
+                                        <option value="10">O</option>
+                                        <option value="9">A+</option>
+                                        <option value="8">A</option>
+                                        <option value="7">B+</option>
+                                        <option value="6.5">B</option>
+                                        <option value="6">C+</option>
+                                        <option value="5">C</option>
+                                        <option value="4">D</option>
+                                        <option value="U">U</option>
+                                        <option value="UA">UA</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mr-2 ml-2 mb-2">
+                            <div class="col-md-4">
+                                <div class="inputwrapper city-input-wrapper">
+                                    <input class="form-control" type="text" value="Course 10" readonly />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="inputwrapper state-input-wrapper">
+                                    <select id="cg10" class="form-control">
+                                        <option disabled selected value="0">--Course Grade --</option>
+                                        <option value="10">O</option>
+                                        <option value="9">A+</option>
+                                        <option value="8">A</option>
+                                        <option value="7">B+</option>
+                                        <option value="6.5">B</option>
+                                        <option value="6">C+</option>
+                                        <option value="5">C</option>
+                                        <option value="4">D</option>
+                                        <option value="U">U</option>
+                                        <option value="UA">UA</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+            </form>
+
+
+            <button type="button" id="calculate">Calculate!</button>
+            <button type="button" id="downloadCertificate" class="certificate-button" hidden>
+                Download CGPA Certificate
+            </button>
+
+        </div>
+        <div id="totalTip" class="result-box">
+            <div class="loading" aria-hidden="true">
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+            </div>
+            <div id="resultText">Your CGPA will appear here.</div>
+        </div>
+        <div id="totalGpa" class="result-box">
+            <div class="loading" aria-hidden="true">
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+            </div>
+            <div id="totalGpaText">Your Total GPA will appear here.</div>
+        </div>
+
+    </div>
+    <footer>
+        <p>2026 CGPA Calculator</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../javascript/supabase-config.js"></script>
+    <script src="../javascript/supabase-client.js"></script>
+    <script src="../javascript/scripts.js?v=20260916"></script>
+    <script src="../javascript/calculate.js?v=20260916"></script>
+</body>
+
+</html>

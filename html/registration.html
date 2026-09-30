@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="../css/registration.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="main">
+                <ul>CGPA Calculator</ul>
+            </div>
+            <ul>
+                <li><a href="home.html"><span class="material-icons">home</span> Home</a></li>
+                <li>
+                    <a href="#"><span class="material-icons">people</span> Students</a>
+                    <ul class="dropdown">
+                        <li><a href="login.html"><span class="material-icons">login</span> Student Login</a></li>
+                        <li><a href="registration.html"><span class="material-icons">person_add</span> Student Registration</a></li>
+                    </ul>
+                </li>
+                <li><a href="CALCULATE.HTML"><span class="material-icons">library_books</span> CALCULATE</a></li>
+            </ul>
+        </nav>
+        <div class="profile-menu">
+            <button id="profileButton" class="profile-button" type="button" aria-expanded="false" aria-controls="profilePanel" title="Open profile">
+                <span class="material-icons">account_circle</span>
+                <span class="profile-label">Profile</span>
+            </button>
+            <section id="profilePanel" class="profile-panel" hidden>
+                <h2>Student Profile</h2>
+                <div id="profileDetails" class="profile-details"></div>
+                <div id="profileHistory" class="profile-history"></div>
+                <button id="profileLogoutButton" class="profile-logout-button" type="button">
+                    <span class="material-icons">logout</span> Logout
+                </button>
+            </section>
+        </div>
+    </header>
+    <main>
+        <div class="registration-form">
+            <h2><span class="material-icons">person_add</span> Register Now</h2>
+            <form id="registerForm" method="POST">
+                <label for="admissionNumber">Admission No:</label>
+                <div class="input-container">
+                    <span class="material-icons">badge</span>
+                    <input type="text" id="admissionNumber" name="admissionNumber" required>
+                </div>
+
+                <label for="registerNumber">Register No:</label>
+                <div class="input-container">
+                    <span class="material-icons">assignment_ind</span>
+                    <input type="text" id="registerNumber" name="registerNumber" required>
+                </div>
+
+                <label for="name">Name:</label>
+                <div class="input-container">
+                    <span class="material-icons">person</span>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <label for="dateOfBirth">Date of Birth:</label>
+                <div class="input-container">
+                    <span class="material-icons">event</span>
+                    <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                </div>
+
+                <label for="department">Department:</label>
+                <div class="input-container">
+                    <span class="material-icons">account_tree</span>
+                    <input type="text" id="department" name="department" required>
+                </div>
+
+                <label for="batch">Batch:</label>
+                <div class="input-container">
+                    <span class="material-icons">calendar_month</span>
+                    <input type="text" id="batch" name="batch" placeholder="e.g. 2024-2028" required>
+                </div>
+
+                <label for="college">College:</label>
+                <div class="input-container">
+                    <span class="material-icons">account_balance</span>
+                    <input type="text" id="college" name="college" required>
+                </div>
+
+                <label for="email">Email:</label>
+                <div class="input-container">
+                    <span class="material-icons">email</span>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <label for="password">Password:</label>
+                <div class="input-container">
+                    <span class="material-icons">lock</span>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to college <a href="#">Terms & Conditions</a></label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <label for="privacy">I agree to college <a href="#">Privacy Policy</a></label>
+                </div>
+
+
+                <button type="submit"><span class="material-icons">send</span> Register Now</button>
+                <div id="errorMessages"></div>
+            </form>
+            <div class="login-now">
+                <p>Already have an account? <a href="login.html"> Login Now</a></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 College Student Management</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../javascript/supabase-config.js"></script>
+    <script src="../javascript/supabase-client.js"></script>
+    <script src="../javascript/scripts.js"></script>
+</body>
+
+</html>
